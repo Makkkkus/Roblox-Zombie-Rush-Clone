@@ -1,0 +1,9 @@
+* Shooting
+* Shop
+* Animations & Player Models
+* Zombie models & AI
+* Various levels (Will use the updated Terrain tool in 2019)
+* Main Menu
+* Chat
+* Hotbar
+* Multiplayer (Later development)

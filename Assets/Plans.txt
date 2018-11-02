@@ -2,8 +2,9 @@
 * Shop
 * Animations & Player Models
 * Zombie models & AI
-* Various levels (Will use the updated Terrain tool in 2019)
+* Various levels (Will use the updated Terrain tool in Unity 2019)
 * Main Menu
 * Chat
 * Hotbar
+	* 10 slots
 * Multiplayer (Later development)

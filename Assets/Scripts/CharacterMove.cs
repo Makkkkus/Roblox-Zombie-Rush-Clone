@@ -4,8 +4,8 @@ public class CharacterMove : MonoBehaviour {
 
     CharacterController controller;
     float speed = 5.0f;
-    float gravity = 3.5f;
-    float jumpForce = 2.5f;
+    float gravity = 14.0f;
+    float jumpForce = 10.0f;
     float vertivalVelocity;
 
 	void Start () {
@@ -14,10 +14,10 @@ public class CharacterMove : MonoBehaviour {
 
 	void FixedUpdate () {
 
-        float moveForward = Input.GetAxis("Forward") * speed * Time.deltaTime;
-        float moveBack = Input.GetAxis("Backward") * speed * Time.deltaTime;
-        float moveLeft = Input.GetAxis("Left") * speed * Time.deltaTime;
-        float moveRight = Input.GetAxis("Right") * speed * Time.deltaTime;
+        float moveForward = Input.GetAxis("Forward") * speed;
+        float moveBack = Input.GetAxis("Backward") * speed;
+        float moveLeft = Input.GetAxis("Left") * speed;
+        float moveRight = Input.GetAxis("Right") * speed;
         float mouseX = Input.GetAxis("Mouse X");
         float mouseY = Input.GetAxis("Mouse Y");
 
@@ -36,7 +36,7 @@ public class CharacterMove : MonoBehaviour {
 
         transform.Rotate(0, mouseX, 0, Space.World);
         transform.Rotate(-mouseY, 0, 0);
-        controller.Move(new Vector3(moveRight + moveLeft, vertivalVelocity, moveForward + moveBack));
+        controller.Move(new Vector3((moveRight + moveLeft) * Time.deltaTime, vertivalVelocity * Time.deltaTime, (moveForward + moveBack) * Time.deltaTime));
 
 	}
 }

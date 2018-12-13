@@ -3,20 +3,18 @@
 public class GameManager : MonoBehaviour {
 
     public bool Save;
-    [Space(2)]
-    [Header("First gameobject should be the player")]
-    public GameObject[] spawnPrefabs;
-    Vector3 v3_spawnPos;
-    Quaternion spawnRot;
+    public GameObject playerPrefab;
+    Vector3 v3_playerSpawnPos;
+    Quaternion playerSpawnRot;
     GameObject playerObject;
 
 	void Start ()
     {
         // Player
-        v3_spawnPos = new Vector3(PlayerPrefs.GetFloat("posX"), PlayerPrefs.GetFloat("posY"), PlayerPrefs.GetFloat("posZ"));
-        spawnRot = new Quaternion(PlayerPrefs.GetFloat("rotX"), PlayerPrefs.GetFloat("rotY"), PlayerPrefs.GetFloat("rotZ"), PlayerPrefs.GetFloat("rotW"));
+        v3_playerSpawnPos = new Vector3(PlayerPrefs.GetFloat("posX"), PlayerPrefs.GetFloat("posY"), PlayerPrefs.GetFloat("posZ"));
+        playerSpawnRot = new Quaternion(PlayerPrefs.GetFloat("rotX"), PlayerPrefs.GetFloat("rotY"), PlayerPrefs.GetFloat("rotZ"), PlayerPrefs.GetFloat("rotW"));
 
-        Instantiate(spawnPrefabs[0], v3_spawnPos, spawnRot);
+        Instantiate(playerPrefab, v3_playerSpawnPos, playerSpawnRot);
 
         playerObject = GameObject.Find("Player(Clone)");
     }
@@ -24,6 +22,7 @@ public class GameManager : MonoBehaviour {
     void Update()
     {
         if (Save)
+
         {
             PlayerPrefs.SetFloat("rotX", playerObject.transform.rotation.x);
             PlayerPrefs.SetFloat("rotY", playerObject.transform.rotation.y);

@@ -341,7 +341,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -484,7 +484,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 224d09c613955c94ea2dc635e20f5454, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Save: 0
   playerPrefab: {fileID: 1377528902729544, guid: afc6785e00b41924d925d39ec41f4d90,
     type: 3}
 --- !u!4 &1381513959

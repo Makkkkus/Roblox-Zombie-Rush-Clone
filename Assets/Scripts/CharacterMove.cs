@@ -8,7 +8,7 @@ public class CharacterMove : MonoBehaviour {
     [SerializeField]
     private float mouse_sensitivity = 2.5f;
     private float walkingSpeed = 2.0f;
-    private float sprintingSpeed = 2.25f;
+    private float sprintingSpeed = 2.75f;
     private float gravity = 15.0f;
     private float jumpForce = 7.0f;
 
@@ -17,8 +17,9 @@ public class CharacterMove : MonoBehaviour {
         playerCamera = GetComponentInChildren<Camera>();
 	}
 
-	void FixedUpdate () {
-        float Player_MoveSpeed =  walkingSpeed;
+    void FixedUpdate()
+    {
+        float Player_MoveSpeed = walkingSpeed;
 
         float moveH = Input.GetAxis("Horizontal") * Player_MoveSpeed;
         float moveV = Input.GetAxis("Vertical") * Player_MoveSpeed;
@@ -45,6 +46,5 @@ public class CharacterMove : MonoBehaviour {
         transform.Rotate(0, mouseX * mouse_sensitivity, 0, Space.World);
         playerCamera.transform.Rotate(-mouseY * mouse_sensitivity, 0, 0);
         controller.Move(moveDir * Time.deltaTime);
-
-	}
+    }
 }

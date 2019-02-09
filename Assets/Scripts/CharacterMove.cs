@@ -2,11 +2,10 @@
 
 public class CharacterMove : MonoBehaviour {
 
-    CharacterController controller;
-    Vector3 moveDir = Vector3.zero;
-    Camera playerCamera;
-    [SerializeField]
-    private float mouse_sensitivity = 2.5f;
+    [SerializeField] private float mouse_sensitivity = 2.5f;
+    private CharacterController controller;
+    private Camera playerCamera;
+    private Vector3 moveDir = Vector3.zero;
     private float walkingSpeed = 2.0f;
     private float sprintingSpeed = 2.75f;
     private float gravity = 15.0f;

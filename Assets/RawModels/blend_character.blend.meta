@@ -24,6 +24,25 @@ ModelImporter:
     100036: Bone_016
     100038: Bone_017
     100040: Character
+    100042: Sphere
+    100044: Sphere_001
+    100046: Left_Hip
+    100048: Left_Leg
+    100050: Left_Lower_arm
+    100052: Left_Shoulder
+    100054: Left_Thigh
+    100056: Left_upper_Arm
+    100058: Lower_Spine
+    100060: Middle_Spine
+    100062: Right_Hip
+    100064: Right_Leg
+    100066: Right_Lower_Arm
+    100068: Right_Shoulder
+    100070: Right_Thigh
+    100072: Right_Upper_Arm
+    100074: Upper_Spine
+    100076: Head
+    100078: Neck
     400000: //RootNode
     400002: Armature
     400004: Bone
@@ -45,13 +64,38 @@ ModelImporter:
     400036: Bone_016
     400038: Bone_017
     400040: Character
+    400042: Sphere
+    400044: Sphere_001
+    400046: Left_Hip
+    400048: Left_Leg
+    400050: Left_Lower_arm
+    400052: Left_Shoulder
+    400054: Left_Thigh
+    400056: Left_upper_Arm
+    400058: Lower_Spine
+    400060: Middle_Spine
+    400062: Right_Hip
+    400064: Right_Leg
+    400066: Right_Lower_Arm
+    400068: Right_Shoulder
+    400070: Right_Thigh
+    400072: Right_Upper_Arm
+    400074: Upper_Spine
+    400076: Head
+    400078: Neck
     2100000: unnamed
     2300000: //RootNode
     2300002: Character
+    2300004: Sphere
+    2300006: Sphere_001
     3300000: //RootNode
     3300002: Character
+    3300004: Sphere
+    3300006: Sphere_001
     4300000: Plane
     4300002: Character
+    4300004: Sphere
+    4300006: Sphere_001
     7400000: Default Take
     9500000: //RootNode
     2186277476908879412: ImportLogs

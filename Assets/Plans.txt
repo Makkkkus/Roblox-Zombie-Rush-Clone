@@ -5,7 +5,7 @@
 
 * Animations & Player Models
 	* Main character
-		* Customizabale
+		* Customizable
 			* Colors
 			* Clothes
 * Zombie models
@@ -22,7 +22,7 @@
 		* Difficulty
 		* Multiplayer
 		* Singleplayer
-		* 
+		*
 	*
 * Chat
 * Hotbar

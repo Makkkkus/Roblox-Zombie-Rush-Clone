@@ -3,8 +3,8 @@
 public class MainMenuScript : MonoBehaviour
 {
 
-    [SerializeField]
-    private GameObject PlayMenu, OptionsMenu;
+
+    [SerializeField] private GameObject PlayMenu, OptionsMenu;
 
 
     void Start()

@@ -42,12 +42,12 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0.28773582, g: 0.7276539, b: 1, a: 0}
   m_projectionMatrixMode: 1
-  m_SensorSize: {x: 36, y: 24}
+  m_SensorSize: {x: 21, y: 15.2}
   m_LensShift: {x: 0, y: 0}
   m_GateFitMode: 2
-  m_FocalLength: 50
+  m_FocalLength: 18
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -56,7 +56,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 70
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -92,7 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4819052180411290}
   - component: {fileID: 143820338829471066}
-  - component: {fileID: 114868769742604576}
+  - component: {fileID: 2347376770678198879}
   - component: {fileID: 3596399817961774200}
   m_Layer: 0
   m_Name: Player
@@ -135,7 +135,7 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.35, z: 0}
---- !u!114 &114868769742604576
+--- !u!114 &2347376770678198879
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,7 +147,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 161d2f9fc05f3c34cac0987b0c07c076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouse_sensitivity: 2.5
+  sensitivity: 2.5
+  walkingSpeed: 2
+  sprintingSpeed: 2.5
 --- !u!114 &3596399817961774200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,7 +164,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   xp: 0
-  coords: {x: 0, y: 0, z: 0}
 --- !u!1 &4262134888760465834
 GameObject:
   m_ObjectHideFlags: 0

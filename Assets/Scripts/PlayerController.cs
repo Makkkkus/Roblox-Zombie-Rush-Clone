@@ -14,16 +14,19 @@ public class PlayerController : MonoBehaviour {
     private GameObject playerCamera;
     private Vector3 moveDir = Vector3.zero;
 
-    private void Start () {
+    private void Awake () {
         controller = GetComponent<CharacterController>();
         playerCamera = GameObject.FindWithTag("MainCamera");
+	}
 
+    private void Start()
+    {
         //Set player speed to walking
         player_MoveSpeed = walkingSpeed;
 
         //Cursor lock
         Cursor.lockState = CursorLockMode.Locked;
-	}
+    }
 
     private void FixedUpdate()
     {

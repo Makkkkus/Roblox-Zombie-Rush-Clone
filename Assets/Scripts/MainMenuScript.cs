@@ -6,8 +6,7 @@ public class MainMenuScript : MonoBehaviour
 
     [SerializeField] private GameObject PlayMenu, OptionsMenu;
 
-
-    private void Start()
+    private void Awake()
     {
         PlayMenu_Disable();
         OptionsMenu_Disable();

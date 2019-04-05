@@ -3,10 +3,10 @@
 public class PlayerController : MonoBehaviour {
 
     [SerializeField] private float sensitivity = 2.5f;
-    [SerializeField] private float walkingSpeed = 2.0f;
-    [SerializeField] private float sprintingSpeed = 2.5f;
-    private float gravity = 15.0f;
-    private float jumpForce = 7.0f;
+    private const float walkingSpeed = 2.0f;
+    private const float sprintingSpeed = 2.5f;
+    private const float gravity = 15.0f;
+    private const float jumpForce = 6.0f;
     private float player_MoveSpeed;
     
     //Unity Components
@@ -52,6 +52,8 @@ public class PlayerController : MonoBehaviour {
         }
         else
         {
+            moveDir = new Vector3(moveH, moveDir.y, moveV);
+            moveDir = transform.TransformDirection(moveDir);
             moveDir.y = moveDir.y - (gravity * Time.deltaTime);
         }
 

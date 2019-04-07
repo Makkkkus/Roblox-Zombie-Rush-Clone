@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : MonoBehaviour
+{
 
     [SerializeField] private float sensitivity = 2.5f;
     private const float walkingSpeed = 2.0f;
@@ -8,16 +9,17 @@ public class PlayerController : MonoBehaviour {
     private const float gravity = 15.0f;
     private const float jumpForce = 6.0f;
     private float player_MoveSpeed;
-    
+
     //Unity Components
     private CharacterController controller;
     private GameObject playerCamera;
     private Vector3 moveDir = Vector3.zero;
 
-    private void Awake () {
+    private void Awake()
+    {
         controller = GetComponent<CharacterController>();
         playerCamera = GameObject.FindWithTag("MainCamera");
-	}
+    }
 
     private void Start()
     {
@@ -52,7 +54,7 @@ public class PlayerController : MonoBehaviour {
         }
         else
         {
-            moveDir = new Vector3(moveH, moveDir.y, moveV);
+            moveDir = new Vector3(moveH * player_MoveSpeed, moveDir.y, moveV * player_MoveSpeed);
             moveDir = transform.TransformDirection(moveDir);
             moveDir.y = moveDir.y - (gravity * Time.deltaTime);
         }

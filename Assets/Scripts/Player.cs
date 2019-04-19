@@ -2,6 +2,16 @@
 
 public class Player : MonoBehaviour
 {
-    public int health = 100;
-    public int xp = 0;
+    [HideInInspector] public int health = 100;
+    [HideInInspector] public int xp = 0;
+
+    private void Update()
+    {
+        if (health <= 0) Die();
+    }
+
+    public void Die()
+    {
+        Destroy(gameObject);
+    }
 }

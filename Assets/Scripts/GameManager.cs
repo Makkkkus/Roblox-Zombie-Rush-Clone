@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
-public class GameManager : MonoBehaviour { 
+public class GameManager : MonoBehaviour
+{
     [Tooltip("The player prefab to spawn")]
     [SerializeField] private GameObject player;
 

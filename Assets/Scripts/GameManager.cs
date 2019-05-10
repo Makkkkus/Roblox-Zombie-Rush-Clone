@@ -3,10 +3,10 @@
 public class GameManager : MonoBehaviour
 {
     [Tooltip("The player prefab to spawn")]
-    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject player_Prefab;
 
     private void Awake()
     {
-        Instantiate(player);
+        Instantiate(player_Prefab);
     }
 }

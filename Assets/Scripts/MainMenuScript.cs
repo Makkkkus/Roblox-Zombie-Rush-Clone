@@ -4,54 +4,37 @@ using UnityEngine.UI;
 public class MainMenuScript : MonoBehaviour
 {
 
+    private int selectedMenu = 0;
+    private bool menuOpen = false;
 
-    [SerializeField] private GameObject PlayMenu, OptionsMenu;
+    [SerializeField] private GameObject[] menu_List;
 
     private void Awake()
     {
-        PlayMenu_Disable();
-        OptionsMenu_Disable();
+        int length = menu_List.Length;
+
+        for(int i = 0; length > i; i++)
+        {
+            menu_List[i].SetActive(false);
+        }
     }
 
-    #region PlayMenu
-    public void PlayMenu_Enable()
+    public void ForceDisableMenu(int menuNumber)
     {
-        PlayMenu.SetActive(true);
+        menu_List[menuNumber].SetActive(false);
     }
-
-    public void PlayMenu_Disable()
+    public void DisableMenu()
     {
-        PlayMenu.SetActive(false);
+        menu_List[selectedMenu].SetActive(false);
     }
 
-    public void PlayMenu_Singleplayer()
+    public void EnableMenu(int menuNumber)
     {
-
+        menu_List[selectedMenu].SetActive(false);
+        selectedMenu = menuNumber;
+        menu_List[menuNumber].SetActive(true);
+        Debug.Log("Enabled menu with number " + menuNumber);
     }
 
-    public void PlayMenu_Multiplayer()
-    {
 
-    }
-    #endregion
-
-    #region OptionsMenu
-    public void OptionsMenu_Enable()
-    {
-        OptionsMenu.SetActive(true);
-    }
-
-    public void OptionsMenu_Disable()
-    {
-        OptionsMenu.SetActive(false);
-    }
-    #endregion
-
-    #region QuitButton
-    public void QuitButton_Quit()
-    {
-        Application.Quit();
-        Debug.Log("Game quit sucessfully");
-    }
-    #endregion
 }

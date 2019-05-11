@@ -1,6 +1,11 @@
-﻿using UnityEngine;
-
-public class Item : MonoBehaviour
+﻿
+public class Item
 {
+    public Item item { get; set; }
+    public Item(Item item)
+    {
+        this.item = item;
+    }
+
 
 }

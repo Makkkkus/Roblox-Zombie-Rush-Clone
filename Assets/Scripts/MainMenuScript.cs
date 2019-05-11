@@ -33,8 +33,11 @@ public class MainMenuScript : MonoBehaviour
         menu_List[selectedMenu].SetActive(false);
         selectedMenu = menuNumber;
         menu_List[menuNumber].SetActive(true);
-        Debug.Log("Enabled menu with number " + menuNumber);
+        Debug.Log("Enabled menu " + menu_List[menuNumber]);
     }
 
-
+    public void QuitGame()
+    {
+        Application.Quit(0);
+    }
 }

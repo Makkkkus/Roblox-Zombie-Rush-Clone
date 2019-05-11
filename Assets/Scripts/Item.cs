@@ -2,9 +2,8 @@
 public class Item
 {
     public Item item { get; set; }
-    public Item(Item item)
+    public Item()
     {
-        this.item = item;
     }
 
 

@@ -2,10 +2,15 @@
 
 public class PlayerHotbar : MonoBehaviour
 {
-    public int selectedHotbarSlot = 1;
-    Item[] hotbarData = new Item[] { };
+    public int selectedHotbarSlot = 0;
+    public int maxHotbarSlots = 8;
+    Item[] hotbarData;
 
-    
+    private void Awake()
+    {
+        
+    }
+
 
 
 }

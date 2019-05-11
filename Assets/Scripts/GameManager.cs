@@ -2,11 +2,12 @@
 
 public class GameManager : MonoBehaviour
 {
-    [Tooltip("The player prefab to spawn")]
-    [SerializeField] private GameObject player_Prefab;
+    //private Player player;
 
-    private void Awake()
+    public void KillPlayer()
     {
-        Instantiate(player_Prefab);
+        //GameObject playerObject = player.GetPlayerObject();
+
+        //Destroy(playerObject);
     }
 }

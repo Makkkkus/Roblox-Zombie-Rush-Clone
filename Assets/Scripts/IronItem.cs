@@ -1,9 +1,9 @@
 ﻿
-public class IronItem
+public class IronItem : Item
 {
-    private Item item;
-    public IronItem(Item item)
+    private Item item = new Item();
+    public IronItem()
     {
-        this.item = item;
+        
     }
 }

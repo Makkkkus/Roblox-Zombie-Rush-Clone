@@ -5,7 +5,6 @@ public class MainMenuScript : MonoBehaviour
 {
 
     private int selectedMenu = 0;
-    private bool menuOpen = false;
 
     [SerializeField] private GameObject[] menu_List;
 

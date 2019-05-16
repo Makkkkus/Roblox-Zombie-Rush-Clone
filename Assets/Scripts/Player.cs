@@ -3,22 +3,6 @@
 public class Player : MonoBehaviour
 {
 
-    //private GameManager gameManager;
-
-    public Player()
-    { 
-    }
-
-    public GameObject GetPlayerObject()
-    {
-        return gameObject;
-    }
-
-    public Player GetPlayer()
-    {
-        return this;
-    }
-
     public int health {
         get
         {
@@ -29,10 +13,15 @@ public class Player : MonoBehaviour
             health = value;
             if (health <= 0)
             { 
-                //gameManager.KillPlayer();
+                KillPlayer();
             }
         }
     }
 
     private int xp { get; set; }
+
+    public void KillPlayer()
+    {
+        Destroy(gameObject);
+    }
 }

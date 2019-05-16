@@ -3,7 +3,6 @@
 public class PlayerController : MonoBehaviour
 {
 
-    [SerializeField] private float sensitivity = 2.5f;
     private const float walkingSpeed = 2.0f;
     private const float sprintingSpeed = 2.5f;
     private const float gravity = 15.0f;
@@ -12,13 +11,15 @@ public class PlayerController : MonoBehaviour
 
     //Unity Components
     private CharacterController controller;
-    private GameObject playerCamera;
+    private GameObject Camera;
+    private CameraController cameraController;
     private Vector3 moveDir = Vector3.zero;
 
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
-        playerCamera = GameObject.FindWithTag("MainCamera");
+        Camera = GameObject.FindGameObjectWithTag("MainCamera");
+        cameraController = Camera.GetComponent<CameraController>();
     }
 
     private void Start()
@@ -36,7 +37,6 @@ public class PlayerController : MonoBehaviour
         float moveH = Input.GetAxis("Horizontal") * player_MoveSpeed;
         float moveV = Input.GetAxis("Vertical") * player_MoveSpeed;
         float mouseX = Input.GetAxis("Mouse X");
-        float mouseY = Input.GetAxis("Mouse Y");
 
         //Check if sprinting
         if (Input.GetButton("Sprint")) player_MoveSpeed = sprintingSpeed;
@@ -60,8 +60,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //Moving
-        transform.Rotate(0, mouseX * sensitivity, 0, Space.World);
-        playerCamera.transform.Rotate(-mouseY * sensitivity, 0, 0);
+        transform.Rotate(0, mouseX * cameraController.sensitivity, 0, Space.World);
         controller.Move(moveDir * Time.deltaTime);
     }
 }

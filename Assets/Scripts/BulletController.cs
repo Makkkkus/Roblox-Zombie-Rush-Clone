@@ -4,7 +4,7 @@ public class BulletController : MonoBehaviour
 {
     private Rigidbody rb;
 
-    private const float bulletForce = 50f;
+    private const float bulletForce = 25f;
 
     private void Awake()
     {
@@ -25,7 +25,5 @@ public class BulletController : MonoBehaviour
             player.health -= 5;
             Destroy(gameObject);
         }
-
-        //Debug.LogWarning("This is not supposed to happen");
     }
 }

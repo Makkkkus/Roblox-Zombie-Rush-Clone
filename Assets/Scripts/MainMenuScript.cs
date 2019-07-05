@@ -10,9 +10,7 @@ public class MainMenuScript : MonoBehaviour
 
     private void Awake()
     {
-        int length = menu_List.Length;
-
-        for(int i = 0; length > i; i++)
+        for(int i = 0; menu_List.Length > i; i++)
         {
             menu_List[i].SetActive(false);
         }
@@ -38,14 +36,25 @@ public class MainMenuScript : MonoBehaviour
         Debug.Log("Enabled menu " + menu_List[getEnabledMenu(menu)]);
     }
 
-    int getEnabledMenu(GameObject menu)
-    {
-        Menu menuScript = menu.GetComponent<Menu>();
-        return menuScript.menuNumber;
-    }
-
-    public void QuitGame()
+    [SerializeField]
+    private void QuitGame()
     {
         Application.Quit(0);
     }
+
+    private int getEnabledMenu(GameObject menu)
+    {
+        for (int i = 0; i < menu_List.Length; i++)
+        {
+            //If we find the index return the current index
+            if (menu_List[i] == menu)
+            {
+                return i;
+            }
+        }
+
+        Debug.LogError("Menu not found!");
+        return -1;
+    }
+
 }

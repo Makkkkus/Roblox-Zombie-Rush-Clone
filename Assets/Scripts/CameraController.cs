@@ -2,12 +2,13 @@
 
 public class CameraController : MonoBehaviour
 {
-    [Range(0.1f,2)]
-    public float sensitivity;
-    public Vector3 offset;
-    public bool invertMouse = false;
+    [Range(0.1f, 2)]
+    [SerializeField] private float sensitivity = 1;
 
     GameObject player;
+
+    float mouseX = 0;
+    float mouseY = 0;
 
     private void Awake()
     {
@@ -16,10 +17,16 @@ public class CameraController : MonoBehaviour
 
     private void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X");
-        float mouseY = Input.GetAxis("Mouse Y");
+        mouseX = Input.GetAxis("Mouse X") * sensitivity;
+        mouseY = Input.GetAxis("Mouse Y") * sensitivity;
 
-        if (invertMouse) mouseY = -mouseY;
-        
+    }
+
+    private void FixedUpdate()
+    {
+        player.transform.Rotate(0, mouseX, 0);
+        transform.Rotate(0, mouseX, 0, Space.World);
+        transform.Rotate(-mouseY, 0, 0, Space.Self);
+        transform.position = player.transform.position + new Vector3(0, .8f);
     }
 }

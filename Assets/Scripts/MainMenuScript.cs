@@ -18,21 +18,30 @@ public class MainMenuScript : MonoBehaviour
         }
     }
 
-    public void ForceDisableMenu(int menuNumber)
+    [SerializeField]
+    private void ForceDisableMenu(GameObject menu)
     {
-        menu_List[menuNumber].SetActive(false);
+        menu_List[getEnabledMenu(menu)].SetActive(false);
     }
-    public void DisableMenu()
+    [SerializeField]
+    private void DisableMenu()
     {
         menu_List[selectedMenu].SetActive(false);
     }
 
-    public void EnableMenu(int menuNumber)
+    [SerializeField]
+    private void EnableMenu(GameObject menu)
     {
         menu_List[selectedMenu].SetActive(false);
-        selectedMenu = menuNumber;
-        menu_List[menuNumber].SetActive(true);
-        Debug.Log("Enabled menu " + menu_List[menuNumber]);
+        selectedMenu = getEnabledMenu(menu);
+        menu_List[getEnabledMenu(menu)].SetActive(true);
+        Debug.Log("Enabled menu " + menu_List[getEnabledMenu(menu)]);
+    }
+
+    int getEnabledMenu(GameObject menu)
+    {
+        Menu menuScript = menu.GetComponent<Menu>();
+        return menuScript.menuNumber;
     }
 
     public void QuitGame()

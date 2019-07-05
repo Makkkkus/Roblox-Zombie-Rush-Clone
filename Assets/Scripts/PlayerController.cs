@@ -60,7 +60,6 @@ public class PlayerController : MonoBehaviour
         }
 
         //Moving
-        transform.Rotate(0, mouseX * cameraController.sensitivity, 0, Space.World);
         controller.Move(moveDir * Time.deltaTime);
     }
 }

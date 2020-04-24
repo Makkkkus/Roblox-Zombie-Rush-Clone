@@ -1,25 +1,21 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
     [Range(0.1f, 2)]
     [SerializeField] private float sensitivity = 1;
 
-    GameObject player;
+    public GameObject player;
 
     float mouseX = 0;
     float mouseY = 0;
-
-    private void Awake()
-    {
-        player = GameObject.FindGameObjectWithTag("Player");
-    }
 
     private void Update()
     {
         mouseX = Input.GetAxis("Mouse X") * sensitivity;
         mouseY = Input.GetAxis("Mouse Y") * sensitivity;
-
     }
 
     private void FixedUpdate()

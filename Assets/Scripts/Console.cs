@@ -1,48 +1,40 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class Console : MonoBehaviour
 {
-    private bool consoleEnabled = false;
+    public bool consoleEnabled = false;
     private bool alreadyRan = false;
+
+    private static GameObject console;
 
     private GameObject windows;
     private TMPro.TextMeshProUGUI inputFieldText;
     private TMPro.TextMeshProUGUI textFieldText;
 
-    private void Awake()
-    {
-        windows = GameObject.Find("Windows");
-        windows.SetActive(false);
+    public GameObject textField;
+    public GameObject inputField;
 
-        GameObject textField = GameObject.Find("TextField");
-        GameObject inputField = GameObject.Find("InputField");
+    private void Start()
+    {
+        console = gameObject;
 
         inputFieldText = inputField.GetComponent<TMPro.TextMeshProUGUI>();
         textFieldText = textField.GetComponent<TMPro.TextMeshProUGUI>();
+        gameObject.SetActive(false);
     }
 
-    private void Update()
-    {
-        if (Input.GetButtonDown("Console"))
-        {
-            consoleEnabled = !consoleEnabled;
-            windows.SetActive(consoleEnabled);
-            Cursor.visible = consoleEnabled;
-        }
-
+    private void Update() {
         if (!consoleEnabled)
         {
-            Time.timeScale = 1;
-            Cursor.lockState = CursorLockMode.Locked;
-            alreadyRan = false;
-            return;
+            Console.DisableConsole();
         }
 
-        if (consoleEnabled) updateConsole();
-
+        UpdateConsole();
     }
 
-    private void updateConsole()
+    private void UpdateConsole()
     {
         if (!alreadyRan)
         {
@@ -69,5 +61,15 @@ public class Console : MonoBehaviour
     private void addText(string text)
     {
         textFieldText.SetText(textFieldText.text + "\n" + text);
+    }
+
+    public static void EnableConsole()
+    {
+        console.SetActive(true);
+    }
+
+    public static void DisableConsole()
+    {
+        console.SetActive(false);
     }
 }

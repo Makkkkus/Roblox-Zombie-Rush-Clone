@@ -1,14 +1,17 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class PlayerHotbar : MonoBehaviour
 {
-    public int selectedHotbarSlot = 0;
-    public const int maxHotbarSlots = 8;
-    Item[] hotbarData;
+    private int selectedSlot = 0;
+    private const int maxHotbarSlots = 3;
+    private List<GameObject> slotData = new List<GameObject>();
 
-    private void Awake()
+
+    private void Start()
     {
-        
+
     }
 
 

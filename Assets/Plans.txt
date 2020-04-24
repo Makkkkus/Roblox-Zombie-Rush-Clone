@@ -25,7 +25,4 @@
 		*
 	*
 * Chat
-* Hotbar
-	* 10 slots
 * Multiplayer (Later development)
-	* Custom system (Not UNet)

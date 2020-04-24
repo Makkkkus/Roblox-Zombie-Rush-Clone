@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class Player : MonoBehaviour
 {
@@ -19,8 +21,9 @@ public class Player : MonoBehaviour
 
     private float current;
     private float previous;
-    public float velocity { get => velocity;
-        set
+    public float velocity {
+        get => velocity;
+        private set
         {
             velocity = value;
             if (velocity <= .1 && velocity >= -.1)

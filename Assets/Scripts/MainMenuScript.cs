@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class MainMenuScript : MonoBehaviour
@@ -16,18 +18,16 @@ public class MainMenuScript : MonoBehaviour
         }
     }
 
-    [SerializeField]
     private void ForceDisableMenu(GameObject menu)
     {
         menu_List[getEnabledMenu(menu)].SetActive(false);
     }
-    [SerializeField]
+
     private void DisableMenu()
     {
         menu_List[selectedMenu].SetActive(false);
     }
 
-    [SerializeField]
     private void EnableMenu(GameObject menu)
     {
         menu_List[selectedMenu].SetActive(false);
@@ -36,7 +36,6 @@ public class MainMenuScript : MonoBehaviour
         Debug.Log("Enabled menu " + menu_List[getEnabledMenu(menu)]);
     }
 
-    [SerializeField]
     private void QuitGame()
     {
         Application.Quit(0);
@@ -46,7 +45,7 @@ public class MainMenuScript : MonoBehaviour
     {
         for (int i = 0; i < menu_List.Length; i++)
         {
-            //If we find the index return the current index
+            // If we find the index return the current index
             if (menu_List[i] == menu)
             {
                 return i;
